@@ -1,32 +1,35 @@
-// Show the selected category
-function showCategory(category) {
-    const categories = document.querySelectorAll('.menu-items');
-    categories.forEach(cat => {
-        if (cat.id === category) {
-            cat.style.display = 'flex';
-        } else {
-            cat.style.display = 'none';
-        }
-    });
-}
-
-// Add item to cart
-function addToCart(item, price) {
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = [];
     const cartItems = document.getElementById('cart-items');
-    const total = document.getElementById('total');
+    const totalDisplay = document.getElementById('total');
 
-    // Create a new list item for the cart
-    const listItem = document.createElement('li');
-    listItem.textContent = `${item} - ₹${price}`;
-    cartItems.appendChild(listItem);
+    function updateCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - ₹${item.price}`;
+            cartItems.appendChild(li);
+            total += item.price;
+        });
+        totalDisplay.textContent = `Total: ₹${total}`;
+    }
 
-    // Update total price
-    let currentTotal = parseFloat(total.textContent.replace('Total: ₹', '')) || 0;
-    currentTotal += price;
-    total.textContent = `Total: ₹${currentTotal}`;
-}
+    // Function to add items to the cart
+    window.addToCart = function(name, price) {
+        cart.push({ name, price });
+        updateCart();
+    };
 
-// Handle checkout
-function checkout() {
-    alert('Thank you for your order!');
-}
+    // Function to show selected menu category
+    window.showCategory = function(category) {
+        const categories = document.querySelectorAll('.menu-items');
+        categories.forEach(cat => {
+            if (cat.id === category) {
+                cat.style.display = 'block';
+            } else {
+                cat.style.display = 'none';
+            }
+        });
+    };
+});
