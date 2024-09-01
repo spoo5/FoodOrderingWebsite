@@ -41,90 +41,128 @@
             <button onclick="showCategory('desserts')">Desserts</button>
         </div>
 
-        <!-- Existing Appetizers -->
-<div id="appetizers" class="menu-items">
-    <h3>Appetizers</h3>
-    <div class="menu-item">
-        <h4>Spring Rolls</h4>
-        <p>Price: $5</p>
-        <button onclick="addToCart('Spring Rolls', 5)">Add to Cart</button>
-    </div>
-    <!-- New Item -->
-    <div class="menu-item">
-        <h4>Garlic Bread</h4>
-        <p>Price: $4</p>
-        <button onclick="addToCart('Garlic Bread', 4)">Add to Cart</button>
-    </div>
-    <!-- Add more new items here -->
-</div>
+        <!-- Appetizers -->
+        <div id="appetizers" class="menu-items">
+            <h3>Appetizers</h3>
+            <div class="menu-item">
+                <img src="images/spring-rolls.jpg" alt="Spring Rolls" class="menu-image">
+                <h4>Spring Rolls</h4>
+                <p>Price: ₹150</p>
+                <button onclick="addToCart('Spring Rolls', 150)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/garlic-bread.jpg" alt="Garlic Bread" class="menu-image">
+                <h4>Garlic Bread</h4>
+                <p>Price: ₹200</p>
+                <button onclick="addToCart('Garlic Bread', 200)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/stuffed-mushrooms.jpg" alt="Stuffed Mushrooms" class="menu-image">
+                <h4>Stuffed Mushrooms</h4>
+                <p>Price: ₹180</p>
+                <button onclick="addToCart('Stuffed Mushrooms', 180)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/bruschetta.jpg" alt="Bruschetta" class="menu-image">
+                <h4>Bruschetta</h4>
+                <p>Price: ₹170</p>
+                <button onclick="addToCart('Bruschetta', 170)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/nachos.jpg" alt="Nachos with Salsa" class="menu-image">
+                <h4>Nachos with Salsa</h4>
+                <p>Price: ₹220</p>
+                <button onclick="addToCart('Nachos with Salsa', 220)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/paneer-tikka.jpg" alt="Paneer Tikka" class="menu-image">
+                <h4>Paneer Tikka</h4>
+                <p>Price: ₹250</p>
+                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart</button>
+            </div>
+        </div>
 
-<!-- Existing Main Course -->
-<div id="main-course" class="menu-items" style="display:none;">
-    <h3>Main Course</h3>
-    <div class="menu-item">
-        <h4>Grilled Chicken</h4>
-        <p>Price: $15</p>
-        <button onclick="addToCart('Grilled Chicken', 15)">Add to Cart</button>
-    </div>
-    <!-- New Item -->
-    <div class="menu-item">
-        <h4>Beef Stroganoff</h4>
-        <p>Price: $18</p>
-        <button onclick="addToCart('Beef Stroganoff', 18)">Add to Cart</button>
-    </div>
-    <!-- Add more new items here -->
-</div>
+        <!-- Main Course -->
+        <div id="main-course" class="menu-items" style="display:none;">
+            <h3>Main Course</h3>
+            <div class="menu-item">
+                <img src="images/grilled-chicken.jpg" alt="Grilled Chicken" class="menu-image">
+                <h4>Grilled Chicken</h4>
+                <p>Price: ₹350</p>
+                <button onclick="addToCart('Grilled Chicken', 350)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/rajma-thali.jpg" alt="Dilli Rajma Thali" class="menu-image">
+                <h4>Dilli Rajma Thali</h4>
+                <p>Price: ₹259</p>
+                <button onclick="addToCart('Dilli Rajma Thali', 259)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/butter-chicken.jpg" alt="Butter Chicken" class="menu-image">
+                <h4>Butter Chicken</h4>
+                <p>Price: ₹400</p>
+                <button onclick="addToCart('Butter Chicken', 400)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/paneer-butter-masala.jpg" alt="Paneer Butter Masala" class="menu-image">
+                <h4>Paneer Butter Masala</h4>
+                <p>Price: ₹320</p>
+                <button onclick="addToCart('Paneer Butter Masala', 320)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/veg-biryani.jpg" alt="Veg Biryani" class="menu-image">
+                <h4>Veg Biryani</h4>
+                <p>Price: ₹280</p>
+                <button onclick="addToCart('Veg Biryani', 280)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/fish-curry.jpg" alt="Fish Curry" class="menu-image">
+                <h4>Fish Curry</h4>
+                <p>Price: ₹370</p>
+                <button onclick="addToCart('Fish Curry', 370)">Add to Cart</button>
+            </div>
+        </div>
 
-<!-- Existing Desserts -->
-<div id="desserts" class="menu-items" style="display:none;">
-    <h3>Desserts</h3>
-    <div class="menu-item">
-        <h4>Chocolate Cake</h4>
-        <p>Price: $7</p>
-        <button onclick="addToCart('Chocolate Cake', 7)">Add to Cart</button>
-    </div>
-    <!-- New Item -->
-    <div class="menu-item">
-        <h4>Cheesecake</h4>
-        <p>Price: $6</p>
-        <button onclick="addToCart('Cheesecake', 6)">Add to Cart</button>
-    </div>
-    <!-- Add more new items here -->
-</div>
+        <!-- Desserts -->
+        <div id="desserts" class="menu-items" style="display:none;">
+            <h3>Desserts</h3>
+            <div class="menu-item">
+                <img src="images/chocolate-cake.jpg" alt="Chocolate Cake" class="menu-image">
+                <h4>Chocolate Cake</h4>
+                <p>Price: ₹50</p>
+                <button onclick="addToCart('Chocolate Cake', 50)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/cheesecake.jpg" alt="Cheesecake" class="menu-image">
+                <h4>Cheesecake</h4>
+                <p>Price: ₹60</p>
+                <button onclick="addToCart('Cheesecake', 60)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/gulab-jamun.jpg" alt="Gulab Jamun" class="menu-image">
+                <h4>Gulab Jamun</h4>
+                <p>Price: ₹80</p>
+                <button onclick="addToCart('Gulab Jamun', 80)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/rasgulla.jpg" alt="Rasgulla" class="menu-image">
+                <h4>Rasgulla</h4>
+                <p>Price: ₹90</p>
+                <button onclick="addToCart('Rasgulla', 90)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/tiramisu.jpg" alt="Tiramisu" class="menu-image">
+                <h4>Tiramisu</h4>
+                <p>Price: ₹120</p>
+                <button onclick="addToCart('Tiramisu', 120)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/fruit-salad.jpg" alt="Fruit Salad" class="menu-image">
+                <h4>Fruit Salad</h4>
+                <p>Price: ₹70</p>
+                <button onclick="addToCart('Fruit Salad', 70)">Add to Cart</button>
+            </div>
+        </div>
     </section>
 
-    <!-- Cart Section -->
-    <div id="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <p id="total"></p>
-        <button onclick="checkout()">Checkout</button>
-    </div>
-
-    <!-- Testimonials Section -->
-    <div class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial">
-            <p>"The best food I've ever had! Highly recommend."</p>
-            <p>- John Doe</p>
-        </div>
-        <div class="testimonial">
-            <p>"Amazing service and delicious food. Will order again!"</p>
-            <p>- Jane Smith</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Foodies. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
-
-    <!-- Link to JavaScript -->
-    <script src="script.js"></script>
-</body>
-</html>
+   
