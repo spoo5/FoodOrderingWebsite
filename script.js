@@ -15,21 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
         totalDisplay.textContent = `Total: ₹${total}`;
     }
 
-    // Function to add items to the cart
-    window.addToCart = function(name, price) {
+    window.addToCart = (name, price) => {
         cart.push({ name, price });
         updateCart();
     };
 
-    // Function to show selected menu category
-    window.showCategory = function(category) {
-        const categories = document.querySelectorAll('.menu-items');
-        categories.forEach(cat => {
-            if (cat.id === category) {
-                cat.style.display = 'block';
-            } else {
-                cat.style.display = 'none';
-            }
+    window.showCategory = (category) => {
+        document.querySelectorAll('.menu-items').forEach(item => {
+            item.style.display = item.id === category ? 'block' : 'none';
         });
     };
+
+    // Show the first category by default
+    showCategory('appetizers');
 });

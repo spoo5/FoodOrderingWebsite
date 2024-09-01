@@ -116,15 +116,6 @@ header ul li a {
     text-align: center;
 }
 
-.menu-item img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.menu-item h4 {
-    margin: 10px 0;
-}
-
 .menu-item button {
     background: #333;
     color: #fff;
@@ -176,19 +167,4 @@ footer {
 
 footer p {
     margin: 10px 0;
-}
-
-footer .social-media {
-    margin: 10px 0;
-}
-
-footer .social-media a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-footer .social-media a:hover {
-    color: #ddd;
 }
