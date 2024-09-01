@@ -6,8 +6,11 @@
     <title>Food Ordering Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Order delicious food online at Foodie's Delight. Fast delivery and amazing offers!">
+    <meta name="keywords" content="food, order food online, restaurant, delivery, foodie's delight">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
             <div class="logo">
@@ -15,43 +18,85 @@
             </div>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#">Order</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h2>Delicious Food Delivered to You</h2>
         <p>Order your favorite meals with just a few clicks!</p>
         <a href="#menu" class="btn">Order Now</a>
     </section>
 
+    <!-- Menu Section -->
     <section id="menu" class="menu">
         <h2>Our Menu</h2>
-        <div class="menu-items">
+        <div class="menu-category">
+            <button onclick="showCategory('appetizers')">Appetizers</button>
+            <button onclick="showCategory('main-course')">Main Course</button>
+            <button onclick="showCategory('desserts')">Desserts</button>
+        </div>
+
+        <!-- Appetizers -->
+        <div id="appetizers" class="menu-items">
+            <h3>Appetizers</h3>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/150" alt="Pizza">
-                <h3>Pizza</h3>
-                <p>$10.99</p>
-                <button class="order-btn">Order</button>
+                <h4>Spring Rolls</h4>
+                <p>Price: $5</p>
+                <button onclick="addToCart('Spring Rolls', 5)">Add to Cart</button>
             </div>
+            <!-- Add more items here -->
+        </div>
+
+        <!-- Main Course -->
+        <div id="main-course" class="menu-items" style="display:none;">
+            <h3>Main Course</h3>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/150" alt="Burger">
-                <h3>Burger</h3>
-                <p>$8.99</p>
-                <button class="order-btn">Order</button>
+                <h4>Grilled Chicken</h4>
+                <p>Price: $15</p>
+                <button onclick="addToCart('Grilled Chicken', 15)">Add to Cart</button>
             </div>
+            <!-- Add more items here -->
+        </div>
+
+        <!-- Desserts -->
+        <div id="desserts" class="menu-items" style="display:none;">
+            <h3>Desserts</h3>
             <div class="menu-item">
-                <img src="https://via.placeholder.com/150" alt="Pasta">
-                <h3>Pasta</h3>
-                <p>$12.99</p>
-                <button class="order-btn">Order</button>
+                <h4>Chocolate Cake</h4>
+                <p>Price: $7</p>
+                <button onclick="addToCart('Chocolate Cake', 7)">Add to Cart</button>
             </div>
+            <!-- Add more items here -->
         </div>
     </section>
 
+    <!-- Cart Section -->
+    <div id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p id="total"></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"The best food I've ever had! Highly recommend."</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"Amazing service and delicious food. Will order again!"</p>
+            <p>- Jane Smith</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Foodies. All rights reserved.</p>
         <div class="social-icons">
@@ -60,5 +105,8 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
