@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.showCategory = (category) => {
         document.querySelectorAll('.menu-items').forEach(item => {
-            item.style.display = item.id === category ? 'block' : 'none';
+            item.style.display = item.id === category ? 'flex' : 'none';
         });
     };
 

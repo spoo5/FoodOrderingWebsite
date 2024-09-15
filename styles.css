@@ -1,5 +1,13 @@
 /* Resetting some default styles */
-body, h1, h2, h3, h4, p, ul, li, button {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,7 +25,7 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 25px 0;
 }
 
 header nav {
@@ -25,6 +33,17 @@ header nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
 }
 
 header .logo h1 {
@@ -47,7 +66,12 @@ header ul li a {
 
 /* Hero section styles */
 .hero {
-    background: #f4f4f4;
+    color: white;
+    background-image: url("Images/fastfood.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
     text-align: center;
     padding: 50px 20px;
 }
@@ -63,8 +87,8 @@ header ul li a {
 }
 
 .hero .btn {
-    background: #333;
-    color: #fff;
+    background: #FF885B;
+    color: #FFE5CF;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -101,12 +125,16 @@ header ul li a {
 }
 
 .menu-items {
+    align-items: center;
+    text-align: center;
+    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu-item {
+
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
