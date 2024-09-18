@@ -192,6 +192,74 @@ footer {
     padding: 20px;
     text-align: center;
 }
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Quantity controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.quantity-controls button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background: #555;
+}
+
+.quantity-controls span {
+    font-size: 1.2em;
+}
+
+/* Cart section styles */
+#cart {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#cart #buy-button {
+    background: #FF885B;
+    color: #FFE5CF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#cart #buy-button:hover {
+    background: #FF7043;
+}
+
+/* Remove item button */
+.remove-item {
+    background: #FF4444;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.remove-item:hover {
+    background: #cc0000;
+}
 
 footer p {
     margin: 10px 0;

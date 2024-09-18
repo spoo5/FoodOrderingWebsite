@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="Images/logo.png">
+                <img src="Images/logo.png" alt="Foodies Logo">
                 <h1>Foodies</h1>
             </div>
             <ul>
@@ -46,28 +46,70 @@
         <div id="appetizers" class="menu-items">
             <h3>Appetizers</h3>
             <div class="menu-item">
+                <img src="Images/spring-rolls.jpg" alt="Spring Rolls">
                 <h4>Spring Rolls</h4>
-                <button onclick="addToCart('Spring Rolls', 150)">Add to Cart - ₹150</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Spring Rolls')">-</button>
+                    <span id="quantity-Spring Rolls">0</span>
+                    <button onclick="incrementQuantity('Spring Rolls')">+</button>
+                </div>
+                <p>₹150</p>
+                <button onclick="addToCart('Spring Rolls', 150)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/garlic-bread.jpg" alt="Garlic Bread">
                 <h4>Garlic Bread</h4>
-                <button onclick="addToCart('Garlic Bread', 100)">Add to Cart - ₹100</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Garlic Bread')">-</button>
+                    <span id="quantity-Garlic Bread">0</span>
+                    <button onclick="incrementQuantity('Garlic Bread')">+</button>
+                </div>
+                <p>₹100</p>
+                <button onclick="addToCart('Garlic Bread', 100)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/stuffed-mushrooms.jpg" alt="Stuffed Mushrooms">
                 <h4>Stuffed Mushrooms</h4>
-                <button onclick="addToCart('Stuffed Mushrooms', 200)">Add to Cart - ₹200</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Stuffed Mushrooms')">-</button>
+                    <span id="quantity-Stuffed Mushrooms">0</span>
+                    <button onclick="incrementQuantity('Stuffed Mushrooms')">+</button>
+                </div>
+                <p>₹200</p>
+                <button onclick="addToCart('Stuffed Mushrooms', 200)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/bruschetta.jpg" alt="Bruschetta">
                 <h4>Bruschetta</h4>
-                <button onclick="addToCart('Bruschetta', 120)">Add to Cart - ₹120</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Bruschetta')">-</button>
+                    <span id="quantity-Bruschetta">0</span>
+                    <button onclick="incrementQuantity('Bruschetta')">+</button>
+                </div>
+                <p>₹120</p>
+                <button onclick="addToCart('Bruschetta', 120)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/nachos-with-salsa.jpg" alt="Nachos with Salsa">
                 <h4>Nachos with Salsa</h4>
-                <button onclick="addToCart('Nachos with Salsa', 180)">Add to Cart - ₹180</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Nachos with Salsa')">-</button>
+                    <span id="quantity-Nachos with Salsa">0</span>
+                    <button onclick="incrementQuantity('Nachos with Salsa')">+</button>
+                </div>
+                <p>₹180</p>
+                <button onclick="addToCart('Nachos with Salsa', 180)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/paneer-tikka.jpg" alt="Paneer Tikka">
                 <h4>Paneer Tikka</h4>
-                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart - ₹250</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Paneer Tikka')">-</button>
+                    <span id="quantity-Paneer Tikka">0</span>
+                    <button onclick="incrementQuantity('Paneer Tikka')">+</button>
+                </div>
+                <p>₹250</p>
+                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart</button>
             </div>
         </div>
 
@@ -75,16 +117,37 @@
         <div id="main-courses" class="menu-items" style="display: none;">
             <h3>Main Courses</h3>
             <div class="menu-item">
+                <img src="Images/paneer-tikka-main.jpg" alt="Paneer Tikka">
                 <h4>Paneer Tikka</h4>
-                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart - ₹250</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Paneer Tikka')">-</button>
+                    <span id="quantity-Paneer Tikka">0</span>
+                    <button onclick="incrementQuantity('Paneer Tikka')">+</button>
+                </div>
+                <p>₹250</p>
+                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/butter-chicken.jpg" alt="Butter Chicken">
                 <h4>Butter Chicken</h4>
-                <button onclick="addToCart('Butter Chicken', 350)">Add to Cart - ₹350</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Butter Chicken')">-</button>
+                    <span id="quantity-Butter Chicken">0</span>
+                    <button onclick="incrementQuantity('Butter Chicken')">+</button>
+                </div>
+                <p>₹350</p>
+                <button onclick="addToCart('Butter Chicken', 350)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/rajma-thaali.jpg" alt="Rajma Thaali">
                 <h4>Rajma Thaali</h4>
-                <button onclick="addToCart('Rajma Thaali', 200)">Add to Cart - ₹200</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Rajma Thaali')">-</button>
+                    <span id="quantity-Rajma Thaali">0</span>
+                    <button onclick="incrementQuantity('Rajma Thaali')">+</button>
+                </div>
+                <p>₹200</p>
+                <button onclick="addToCart('Rajma Thaali', 200)">Add to Cart</button>
             </div>
         </div>
 
@@ -92,16 +155,37 @@
         <div id="desserts" class="menu-items" style="display: none;">
             <h3>Desserts</h3>
             <div class="menu-item">
+                <img src="Images/tiramisu.jpg" alt="Tiramisu">
                 <h4>Tiramisu</h4>
-                <button onclick="addToCart('Tiramisu', 180)">Add to Cart - ₹180</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Tiramisu')">-</button>
+                    <span id="quantity-Tiramisu">0</span>
+                    <button onclick="incrementQuantity('Tiramisu')">+</button>
+                </div>
+                <p>₹180</p>
+                <button onclick="addToCart('Tiramisu', 180)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/gulaab-jamun.jpg" alt="Gulaab Jamun">
                 <h4>Gulaab Jamun</h4>
-                <button onclick="addToCart('Gulaab Jamun', 120)">Add to Cart - ₹120</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Gulaab Jamun')">-</button>
+                    <span id="quantity-Gulaab Jamun">0</span>
+                    <button onclick="incrementQuantity('Gulaab Jamun')">+</button>
+                </div>
+                <p>₹120</p>
+                <button onclick="addToCart('Gulaab Jamun', 120)">Add to Cart</button>
             </div>
             <div class="menu-item">
+                <img src="Images/rasgulla.jpg" alt="Rasgulla">
                 <h4>Rasgulla</h4>
-                <button onclick="addToCart('Rasgulla', 150)">Add to Cart - ₹150</button>
+                <div class="quantity-controls">
+                    <button onclick="decrementQuantity('Rasgulla')">-</button>
+                    <span id="quantity-Rasgulla">0</span>
+                    <button onclick="incrementQuantity('Rasgulla')">+</button>
+                </div>
+                <p>₹150</p>
+                <button onclick="addToCart('Rasgulla', 150)">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -111,6 +195,7 @@
         <h2>Your Cart</h2>
         <ul id="cart-items"></ul>
         <p id="total">Total: ₹0</p>
+        <button id="buy-button">Buy</button>
     </section>
 
     <!-- Footer Section -->
@@ -121,3 +206,4 @@
 </body>
 
 </html>
+
