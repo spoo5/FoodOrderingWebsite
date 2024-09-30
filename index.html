@@ -153,3 +153,97 @@
 </body>
 
 </html>
+<script>
+    // Your existing JavaScript code
+    
+    // New JavaScript functions
+    document.addEventListener('DOMContentLoaded', () => {
+        let cart = [];
+        const cartItemsElement = document.getElementById('cart-items');
+        const totalElement = document.getElementById('total');
+    
+        // Function to show/hide menu categories
+        window.showCategory = function (category) {
+            const categories = document.querySelectorAll('.menu-items');
+            categories.forEach(cat => {
+                cat.style.display = cat.id === category ? 'flex' : 'none';
+            });
+        };
+    
+        // Function to add an item to the cart
+        window.addToCart = function (item, price) {
+            const cartItem = { name: item, price: price };
+    
+            fetch('/cart', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cartItem),
+            })
+            .then(response => response.json())
+            .then(data => {
+                cart = data.cart;  // Update local cart state
+                updateCart();  // Update the cart display
+                showNotification(data.message);  // Show success notification
+            })
+            .catch(error => console.error('Error:', error));
+        };
+    
+        function showNotification(message) {
+            const notificationElement = document.getElementById('notification');
+            notificationElement.textContent = message;  // Set the message
+            notificationElement.classList.add('show');  // Show the notification
+            setTimeout(() => {
+                notificationElement.classList.remove('show');
+            }, 2000);
+        }
+    
+        function updateCart() {
+            cartItemsElement.innerHTML = '';
+            let total = 0;
+    
+            cart.forEach(item => {
+                const itemTotal = item.price;  // Adjusted for the cart
+                total += itemTotal;
+    
+                const cartItemElement = document.createElement('li');
+                cartItemElement.textContent = `${item.name} - ₹${item.price}`;
+    
+                cartItemsElement.appendChild(cartItemElement);
+            });
+    
+            totalElement.textContent = `Total: ₹${total}`;
+        }
+    
+        // Buy button functionality
+        document.getElementById('buy-button').addEventListener('click', () => {
+            if (cart.length > 0) {
+                fetch('/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    cart = []; // Clear the cart
+                    updateCart(); // Update display
+                })
+                .catch(error => console.error('Error:', error));
+            } else {
+                alert('Your cart is empty!');
+            }
+        });
+    
+        // Initial menu fetch
+        fetch('/menu')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Menu:', data);  // For debug purposes
+        });
+    });
+    </script>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="login.html">Login</a>
+    </nav>
+      
