@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   const validPassword = '1210';
 
   if (username === validUsername && password === validPassword) {
-      window.location.href = 'index.html';  // Redirect to dashboard or homepage
+      window.location.href = 'main.html';  // Redirect to dashboard or homepage
   } else {
       document.getElementById('error-message').style.display = 'block';
   }
