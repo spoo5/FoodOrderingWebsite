@@ -1,249 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodies</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
+    <div class="login-container">
+        <form id="loginForm" action="dashboard.html" method="POST">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <p id="error-message" style="color: red; display: none;">Invalid credentials</p>
+        </form>
+    </div>
 
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="Images/logo.png" alt="Foodies Logo">
-                <h1>Foodies</h1>
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#cart">Cart</a></li>
-
-            </ul>
-            <div id="notification" class="notification">Item added to cart successfully!</div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h2>Welcome to Foodies</h2>
-        <p>Discover our delicious menu and order online!</p>
-        <a href="#menu" class="btn">View Menu</a>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-category">
-            <button onclick="showCategory('appetizers')">Appetizers</button>
-            <button onclick="showCategory('main-courses')">Main Courses</button>
-            <button onclick="showCategory('desserts')">Desserts</button>
-        </div>
-
-
-
-        <!-- Appetizers -->
-        <div id="appetizers" class="menu-items">
-            <h3>Appetizers</h3>
-            <div class="menu-item">
-                <img src="Images/spring_rolls.jpg" alt="Spring Rolls">
-                <h4>Spring Rolls</h4>
-                <p>₹150</p>
-                <button onclick="addToCart('Spring Rolls', 150)">Add to Cart</button>
-            </div>
-
-
-
-            <div class="menu-item">
-                <img src="Images/garlic_bread.jpg" alt="Garlic Bread">
-                <h4>Garlic Bread</h4>
-                <p>₹100</p>
-                <button onclick="addToCart('Garlic Bread', 100)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/stuffed_mushrooms.jpeg" alt="Stuffed Mushrooms">
-                <h4>Stuffed Mushrooms</h4>
-                <p>₹200</p>
-                <button onclick="addToCart('Stuffed Mushrooms', 200)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/bruschetta.jpeg" alt="Bruschetta">
-                <h4>Bruschetta</h4>
-                <p>₹120</p>
-                <button onclick="addToCart('Bruschetta', 120)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/nachos.jpeg" alt="Nachos with Salsa">
-                <h4>Nachos with Salsa</h4>
-                <p>₹180</p>
-                <button onclick="addToCart('Nachos with Salsa', 180)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/paneer-tikka.jpg" alt="Paneer Tikka">
-                <h4>Paneer Tikka</h4>
-                <p>₹250</p>
-                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart</button>
-            </div>
-        </div>
-
-        <!-- Main Courses -->
-        <div id="main-courses" class="menu-items" style="display: none;">
-            <h3>Main Courses</h3>
-            <div class="menu-item">
-                <img src="Images/paneer-tikka.jpg" alt="Paneer Tikka">
-                <h4>Paneer Tikka</h4>
-                <p>₹250</p>
-                <button onclick="addToCart('Paneer Tikka', 250)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/butter-chicken.jpg" alt="Butter Chicken">
-                <h4>Butter Chicken</h4>
-                <p>₹350</p>
-                <button onclick="addToCart('Butter Chicken', 350)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/rajma-thali.jpg" alt="Rajma Thaali">
-                <h4>Rajma Thaali</h4>
-                <p>₹200</p>
-                <button onclick="addToCart('Rajma Thaali', 200)">Add to Cart</button>
-            </div>
-        </div>
-
-        <!-- Desserts -->
-        <div id="desserts" class="menu-items" style="display: none;">
-            <h3>Desserts</h3>
-            <div class="menu-item">
-                <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                <h4>Tiramisu</h4>
-                <p>₹180</p>
-                <button onclick="addToCart('Tiramisu', 180)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/gulab-jamun.jpg" alt="Gulaab Jamun">
-                <h4>Gulaab Jamun</h4>
-                <p>₹120</p>
-                <button onclick="addToCart('Gulaab Jamun', 120)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="Images/rasgulla.jpg" alt="Rasgulla">
-                <h4>Rasgulla</h4>
-                <p>₹150</p>
-                <button onclick="addToCart('Rasgulla', 150)">Add to Cart</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Section -->
-    <section id="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <p id="total">Total: ₹0</p>
-        <button id="buy-button">Buy</button>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Foodies. All rights reserved.</p>
-    </footer>
-
+    <script src="login.js"></script>
 </body>
-
 </html>
-<script>
-    // Your existing JavaScript code
-    
-    // New JavaScript functions
-    document.addEventListener('DOMContentLoaded', () => {
-        let cart = [];
-        const cartItemsElement = document.getElementById('cart-items');
-        const totalElement = document.getElementById('total');
-    
-        // Function to show/hide menu categories
-        window.showCategory = function (category) {
-            const categories = document.querySelectorAll('.menu-items');
-            categories.forEach(cat => {
-                cat.style.display = cat.id === category ? 'flex' : 'none';
-            });
-        };
-    
-        // Function to add an item to the cart
-        window.addToCart = function (item, price) {
-            const cartItem = { name: item, price: price };
-    
-            fetch('/cart', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(cartItem),
-            })
-            .then(response => response.json())
-            .then(data => {
-                cart = data.cart;  // Update local cart state
-                updateCart();  // Update the cart display
-                showNotification(data.message);  // Show success notification
-            })
-            .catch(error => console.error('Error:', error));
-        };
-    
-        function showNotification(message) {
-            const notificationElement = document.getElementById('notification');
-            notificationElement.textContent = message;  // Set the message
-            notificationElement.classList.add('show');  // Show the notification
-            setTimeout(() => {
-                notificationElement.classList.remove('show');
-            }, 2000);
-        }
-    
-        function updateCart() {
-            cartItemsElement.innerHTML = '';
-            let total = 0;
-    
-            cart.forEach(item => {
-                const itemTotal = item.price;  // Adjusted for the cart
-                total += itemTotal;
-    
-                const cartItemElement = document.createElement('li');
-                cartItemElement.textContent = `${item.name} - ₹${item.price}`;
-    
-                cartItemsElement.appendChild(cartItemElement);
-            });
-    
-            totalElement.textContent = `Total: ₹${total}`;
-        }
-    
-        // Buy button functionality
-        document.getElementById('buy-button').addEventListener('click', () => {
-            if (cart.length > 0) {
-                fetch('/checkout', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
-                    cart = []; // Clear the cart
-                    updateCart(); // Update display
-                })
-                .catch(error => console.error('Error:', error));
-            } else {
-                alert('Your cart is empty!');
-            }
-        });
-    
-        // Initial menu fetch
-        fetch('/menu')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Menu:', data);  // For debug purposes
-        });
-    });
-    </script>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="login.html">Login</a>
-    </nav>
-      
